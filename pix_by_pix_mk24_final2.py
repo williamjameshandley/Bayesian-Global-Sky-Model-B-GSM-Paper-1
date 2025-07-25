@@ -89,12 +89,19 @@ class bayes_mod():
        
         try:
             self.freqs_for_T_v_LST_comp = freqs_for_T_v_LST_comp
-            self.EDGES_beams = (1/(4*np.pi))*EDGES_beams*hp.nside2pixarea(nside=hp.npix2nside(self.no_of_pixels))
+            # Store raw beams without incorrect normalization
+            self.EDGES_beams = EDGES_beams
+            # Calculate pixel area for proper normalization
+            self.pix_area = hp.nside2pixarea(nside=hp.npix2nside(self.no_of_pixels))
+            # Calculate beam integrals for proper normalization (shape: [n_freq, n_LST])
+            self.beam_integrals = np.nansum(self.EDGES_beams * self.pix_area, axis=0, keepdims=True)
             self.EDGES_noise_det_term = -np.sum(np.log(2*np.pi*EDGES_errs))
         except:
             print ("freqs cant be divided setting to None")
             self.freqs_for_T_v_LST_comp = None
             self.EDGES_beams = None
+            self.pix_area = None
+            self.beam_integrals = None
             self.EDGES_noise_det_term = None
             
         self.EDGES_temps = EDGES_temps_at_calib_LSTs_and_freqs
@@ -338,7 +345,8 @@ class bayes_mod():
             convolved_sky_preds = mean_sky_preds * self.EDGES_beams
 
             #compute the integrated sky temp for each freq and LST in the freqs to compare
-            integrated_skys = np.nansum(convolved_sky_preds,axis=0)
+            # Apply proper beam normalization: T_A = sum(T_sky * B * pix_area) / sum(B * pix_area)
+            integrated_skys = np.nansum(convolved_sky_preds * self.pix_area, axis=0) / self.beam_integrals.squeeze()
 
             #diff = integrated_skys - self.EDGES_temps #the difference between the model and the EDGES obs at all freqs and LSTs
             #diff_trans = np.reshape(diff,(diff.shape[0],1,diff.shape[1]))

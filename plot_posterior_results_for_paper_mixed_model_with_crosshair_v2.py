@@ -491,12 +491,18 @@ for i in range(len(test_freqs_for_TvsLST)):
 
     #generate EDGES beams set for this freq
     beams = gen_beams_and_T_vs_LST_v2.gen_EDGES_beams_at_LSTs(test_freqs_for_TvsLST[i],test_LSTs,Nside)
-    beams = (1/(4*np.pi))*beams*hp.nside2pixarea(nside=Nside)
-
+    # Apply correct normalization
+    pix_area = hp.nside2pixarea(nside=Nside)
+    
     #load the posterior sky
     post_sky = np.loadtxt(root+"/bayesian_pred_"+str(test_freqs_for_TvsLST[i])+"MHz")
-    #generate a TvsLST for the posterior sky
-    post_mean_TvsLST = np.array([np.nansum(beams[:,i]*post_sky) for i in range(len(test_LSTs))])
+    #generate a TvsLST for the posterior sky with proper beam normalization
+    post_mean_TvsLST = []
+    for j in range(len(test_LSTs)):
+        beam_integral = np.nansum(beams[:, j] * pix_area)
+        antenna_temp = np.nansum(beams[:, j] * post_sky * pix_area) / beam_integral
+        post_mean_TvsLST.append(antenna_temp)
+    post_mean_TvsLST = np.array(post_mean_TvsLST)
     
     
     TvsLST_post.append(post_mean_TvsLST)

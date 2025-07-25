@@ -459,7 +459,8 @@ def abs_temp_likelihood(comp_map_sample,spec_params):
     convolved_sky_preds = sky_preds * bayes_eval.EDGES_beams
 
     #compute the integrated sky temp for each freq and LST in the freqs to compare
-    integrated_skys = np.nansum(convolved_sky_preds,axis=0)
+    # Apply proper beam normalization: T_A = sum(T_sky * B * pix_area) / sum(B * pix_area)
+    integrated_skys = np.nansum(convolved_sky_preds * bayes_eval.pix_area, axis=0) / bayes_eval.beam_integrals.squeeze()
 
             
     EDGES_likelihood_t2s = ((integrated_skys-bayes_eval.EDGES_temps)/bayes_eval.EDGES_errs)**2

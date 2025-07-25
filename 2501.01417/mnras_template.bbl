@@ -1,0 +1,86 @@
+\begin{thebibliography}{}
+\makeatletter
+\relax
+\def\mn@urlcharsother{\let\do\@makeother \do\$\do\&\do\#\do\^\do\_\do\%\do\~}
+\def\mn@doi{\begingroup\mn@urlcharsother \@ifnextchar [ {\mn@doi@} {\mn@doi@[]}}
+\def\mn@doi@[#1]#2{\def\@tempa{#1}\ifx\@tempa\@empty \href {http://dx.doi.org/#2} {doi:#2}\else \href {http://dx.doi.org/#2} {#1}\fi \endgroup}
+\def\mn@eprint#1#2{\mn@eprint@#1:#2::\@nil}
+\def\mn@eprint@arXiv#1{\href {http://arxiv.org/abs/#1} {{\tt arXiv:#1}}}
+\def\mn@eprint@dblp#1{\href {http://dblp.uni-trier.de/rec/bibtex/#1.xml} {dblp:#1}}
+\def\mn@eprint@#1:#2:#3:#4\@nil{\def\@tempa {#1}\def\@tempb {#2}\def\@tempc {#3}\ifx \@tempc \@empty \let \@tempc \@tempb \let \@tempb \@tempa \fi \ifx \@tempb \@empty \def\@tempb {arXiv}\fi \@ifundefined {mn@eprint@\@tempb}{\@tempb:\@tempc}{\expandafter \expandafter \csname mn@eprint@\@tempb\endcsname \expandafter{\@tempc}}}
+
+\bibitem[\protect\citeauthoryear{Davie \& Stothers}{Davie \& Stothers}{2013}]{Davie2013}
+Davie A.~M.,  Stothers A.~J.,  2013, \mn@doi [Proceedings of the Royal Society of Edinburgh: Section A Mathematics] {10.1017/s0308210511001648}, 143, 351–369
+
+\bibitem[\protect\citeauthoryear{Dowell, Taylor, Schinzel, Kassim  \& Stovall}{Dowell et~al.}{2017}]{LFSM}
+Dowell J.,  Taylor G.~B.,  Schinzel F.~K.,  Kassim N.~E.,   Stovall K.,  2017, \mn@doi [Monthly Notices of the Royal Astronomical Society] {10.1093/mnras/stx1136}, 469, 4537–4550
+
+\bibitem[\protect\citeauthoryear{Guzmán, May, Alvarez  \& Maeda}{Guzmán et~al.}{2010}]{Guzmn2010}
+Guzmán A.~E.,  May J.,  Alvarez H.,   Maeda K.,  2010, \mn@doi [Astronomy &amp; Astrophysics] {10.1051/0004-6361/200913628}, 525, A138
+
+\bibitem[\protect\citeauthoryear{Handley}{Handley}{2018}]{fgivenx}
+Handley W.,  2018, \mn@doi [Journal of Open Source Software] {10.21105/joss.00849}, 3, 849
+
+\bibitem[\protect\citeauthoryear{Handley}{Handley}{2019}]{anesthetic}
+Handley W.,  2019, \mn@doi [Journal of Open Source Software] {10.21105/joss.01414}, 4, 1414
+
+\bibitem[\protect\citeauthoryear{Handley, Hobson  \& Lasenby}{Handley et~al.}{2015}]{polychord}
+Handley W.~J.,  Hobson M.~P.,   Lasenby A.~N.,  2015, \mn@doi [Monthly Notices of the Royal Astronomical Society] {10.1093/mnras/stv1911}, 453, 4385–4399
+
+\bibitem[\protect\citeauthoryear{Kriele, Wayth, Bentum, Juswardy  \& Trott}{Kriele et~al.}{2022}]{EDA2}
+Kriele M.~A.,  Wayth R.~B.,  Bentum M.~J.,  Juswardy B.,   Trott C.~M.,  2022, \mn@doi [Publications of the Astronomical Society of Australia] {10.1017/pasa.2022.2}, 39
+
+\bibitem[\protect\citeauthoryear{Landecker}{Landecker}{1970}]{LW150}
+Landecker T. L.~Wielebinski R.,  1970, Australian Journal of Physics, 16
+
+\bibitem[\protect\citeauthoryear{Liu, Pritchard, Tegmark  \& Loeb}{Liu et~al.}{2013}]{Liu2013}
+Liu A.,  Pritchard J.~R.,  Tegmark M.,   Loeb A.,  2013, \mn@doi [Physical Review D] {10.1103/physrevd.87.043002}, 87
+
+\bibitem[\protect\citeauthoryear{Monsalve et~al.,}{Monsalve et~al.}{2021}]{Monsalve2021}
+Monsalve R.~A.,  et~al., 2021, \mn@doi [The Astrophysical Journal] {10.3847/1538-4357/abd558}, 908, 145
+
+\bibitem[\protect\citeauthoryear{Mozdzen, Bowman, Monsalve  \& Rogers}{Mozdzen et~al.}{2017}]{Mozdzen2017}
+Mozdzen T.~J.,  Bowman J.~D.,  Monsalve R.~A.,   Rogers A. E.~E.,  2017, \mn@doi [Monthly Notices of the Royal Astronomical Society] {10.1093/mnras/stw3275}, 466, 2235–2235
+
+\bibitem[\protect\citeauthoryear{Mozdzen, Mahesh, Monsalve, Rogers  \& Bowman}{Mozdzen et~al.}{2018}]{Mozdzen2018}
+Mozdzen T.~J.,  Mahesh N.,  Monsalve R.~A.,  Rogers A. E.~E.,   Bowman J.~D.,  2018, \mn@doi [Monthly Notices of the Royal Astronomical Society] {10.1093/mnras/sty3410}, 483, 4411–4423
+
+\bibitem[\protect\citeauthoryear{Petersen \& Pedersen}{Petersen \& Pedersen}{2012}]{matrix_cookbook}
+Petersen K.~B.,  Pedersen M.~S.,  2012, The Matrix Cookbook, \url {http://www2.compute.dtu.dk/pubdb/pubs/3274-full.html}
+
+\bibitem[\protect\citeauthoryear{Pritchard \& Loeb}{Pritchard \& Loeb}{2012}]{Pritchard2012}
+Pritchard J.~R.,  Loeb A.,  2012, \mn@doi [Reports on Progress in Physics] {10.1088/0034-4885/75/8/086901}, 75, 086901
+
+\bibitem[\protect\citeauthoryear{Remazeilles, Dickinson, Banday, Bigot-Sazy  \& Ghosh}{Remazeilles et~al.}{2015}]{Remazeilles2015}
+Remazeilles M.,  Dickinson C.,  Banday A.~J.,  Bigot-Sazy M.-A.,   Ghosh T.,  2015, \mn@doi [Monthly Notices of the Royal Astronomical Society] {10.1093/mnras/stv1274}, 451, 4311–4327
+
+\bibitem[\protect\citeauthoryear{Shen, Anstey, de Lera~Acedo  \& Fialkov}{Shen et~al.}{2024}]{Shen2024}
+Shen E.,  Anstey D.,  de Lera~Acedo E.,   Fialkov A.,  2024, \mn@doi [Monthly Notices of the Royal Astronomical Society] {10.1093/mnras/stae614}, 529, 1642–1653
+
+\bibitem[\protect\citeauthoryear{Singh, Subrahmanyan, Shankar, Rao, Girish, Raghunathan, Somashekar  \& Srivani}{Singh et~al.}{2018}]{Singh2018}
+Singh S.,  Subrahmanyan R.,  Shankar N.~U.,  Rao M.~S.,  Girish B.~S.,  Raghunathan A.,  Somashekar R.,   Srivani K.~S.,  2018, \mn@doi [Experimental Astronomy] {10.1007/s10686-018-9584-3}, 45, 269–314
+
+\bibitem[\protect\citeauthoryear{Sivia \& Skilling}{Sivia \& Skilling}{2006}]{Sivia_Skilling}
+Sivia D.~S.,  Skilling J.,  2006, Data analysis a Bayesian tutorial, 2 edn.
+Oxford University Press
+
+\bibitem[\protect\citeauthoryear{Skilling}{Skilling}{2004}]{Skilling2004}
+Skilling J.,  2004, in AIP Conference Proceedings. AIP, p. 395–405, \mn@doi{10.1063/1.1835238}, \url {http://dx.doi.org/10.1063/1.1835238}
+
+\bibitem[\protect\citeauthoryear{Spinelli, Bernardi, Garsden, Greenhill, Fialkov, Dowell  \& Price}{Spinelli et~al.}{2021}]{Spinelli2021}
+Spinelli M.,  Bernardi G.,  Garsden H.,  Greenhill L.~J.,  Fialkov A.,  Dowell J.,   Price D.~C.,  2021, \mn@doi [Monthly Notices of the Royal Astronomical Society] {10.1093/mnras/stab1363}, 505, 1575–1588
+
+\bibitem[\protect\citeauthoryear{Stompor, Leach, Stivoli  \& Baccigalupi}{Stompor et~al.}{2009}]{Stompor2009}
+Stompor R.,  Leach S.,  Stivoli F.,   Baccigalupi C.,  2009, \mn@doi [Monthly Notices of the Royal Astronomical Society] {10.1111/j.1365-2966.2008.14023.x}, 392, 216–232
+
+\bibitem[\protect\citeauthoryear{Trotta}{Trotta}{2008}]{Trotta2008}
+Trotta R.,  2008, \mn@doi [Contemporary Physics] {10.1080/00107510802066753}, 49, 71–104
+
+\bibitem[\protect\citeauthoryear{Zheng et~al.,}{Zheng et~al.}{2016}]{Zheng2016}
+Zheng H.,  et~al., 2016, \mn@doi [Monthly Notices of the Royal Astronomical Society] {10.1093/mnras/stw2525}, 464, 3486–3497
+
+\bibitem[\protect\citeauthoryear{de Oliveira-Costa, Tegmark, Gaensler, Jonas, Landecker  \& Reich}{de~Oliveira-Costa et~al.}{2008}]{GSM}
+de Oliveira-Costa A.,  Tegmark M.,  Gaensler B.~M.,  Jonas J.,  Landecker T.~L.,   Reich P.,  2008, \mn@doi [Monthly Notices of the Royal Astronomical Society] {10.1111/j.1365-2966.2008.13376.x}, 388, 247–260
+
+\makeatother
+\end{thebibliography}
