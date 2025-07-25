@@ -1,5 +1,10 @@
 # 🌌 Bayesian Global Sky Model (B-GSM) - Paper 1: Validation
 
+<div align="center">
+  <img src="bgsm_landscape_abstract.png" alt="B-GSM Landscape Abstract Visualization" width="800"/>
+  <p><em>Abstract landscape visualization: radio telescopes, flowing cosmic data streams, and the mathematical poetry of Bayesian inference</em></p>
+</div>
+
 This repository contains all code and data for the first B-GSM validation paper:
 
 **"The Bayesian Global Sky Model (B-GSM): Validation of a Data Driven Bayesian Simultaneous Component Separation and Calibration Algorithm for EoR Foreground Modelling"**
